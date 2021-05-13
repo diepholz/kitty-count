@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <table class="table table-bordered table-striped table-hover">
+        <thead>
+            <tr>
+                <th>Visit Number </th>
+                <th>Time of Last Visit</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for visit in visits %}
+            <tr>
+                <td>{{ visit['visits'] }}</td>
+                <td>{{ str2dt(visit['time']).strftime("%H:%M:%S %a, %b %dth %Y") }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
